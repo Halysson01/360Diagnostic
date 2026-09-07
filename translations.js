@@ -86,6 +86,8 @@ const TRANSLATIONS = {
       mainCta: "Build my growth plan",
       mainCtaText: "Talk with an Elevra strategist about the priorities identified in your diagnostic.",
       newDiagnostic: "Run a new diagnostic",
+      downloadPdf: "Download as PDF",
+      printDate: "Generated on",
       demoNotice: "Demo mode: no destination URL configured for this action yet.",
       footer: "© Elevra Digital. Proprietary diagnostic methodology.",
       scoreRingLabel: "Overall score"
@@ -378,6 +380,8 @@ const TRANSLATIONS = {
       mainCta: "Montar meu plano de crescimento",
       mainCtaText: "Converse com um estrategista da Elevra sobre as prioridades identificadas no seu diagnóstico.",
       newDiagnostic: "Fazer um novo diagnóstico",
+      downloadPdf: "Baixar em PDF",
+      printDate: "Gerado em",
       demoNotice: "Modo demonstração: nenhuma URL de destino configurada para esta ação ainda.",
       footer: "© Elevra Digital. Metodologia de diagnóstico proprietária.",
       scoreRingLabel: "Score geral"
@@ -670,6 +674,8 @@ const TRANSLATIONS = {
       mainCta: "Construir mi plan de crecimiento",
       mainCtaText: "Habla con un estratega de Elevra sobre las prioridades identificadas en tu diagnóstico.",
       newDiagnostic: "Hacer un nuevo diagnóstico",
+      downloadPdf: "Descargar en PDF",
+      printDate: "Generado el",
       demoNotice: "Modo demostración: aún no hay una URL de destino configurada para esta acción.",
       footer: "© Elevra Digital. Metodología de diagnóstico propietaria.",
       scoreRingLabel: "Puntuación general"

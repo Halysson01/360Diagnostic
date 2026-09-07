@@ -743,6 +743,36 @@ ul { padding: 0; list-style: none; }
   .view-form { max-width: 640px; }
 }
 
+.print-only { display: none; }
+.result-date { font-size: 13px; color: var(--mist); margin-top: 8px; }
+
+/* ---------- Print / PDF ---------- */
+@media print {
+  @page { margin: 16mm; }
+  html, body { background: #fff !important; }
+  body { font-size: 12.5px; display: block; }
+  .site-header, .site-footer, .form-nav, .form-footer, .final-cta, .plan-cta, .modal, .toast,
+  #view-hero, #view-form, #view-loading { display: none !important; }
+  #view-result { display: block !important; }
+  .print-only { display: block; }
+  #app { padding: 0; }
+  .view-result { padding: 0; }
+  .result-inner { max-width: none; }
+  .view, .score-ring .arc, .bar-fill { animation: none !important; transition: none !important; }
+  .block { padding: 18px 0; }
+  .block-title, .block-intro { break-after: avoid; }
+  .priority, .plan-item, .compare-card, .exposure, .strong-card { break-inside: avoid; box-shadow: none !important; }
+  .score-hero { padding-bottom: 20px; }
+  .score-ring { width: 180px; height: 180px; }
+  .score-number { font-size: 62px; }
+  .compare { grid-template-columns: 1fr 1fr; }
+  .exposure { grid-template-columns: auto 1fr; }
+  .priority { grid-template-columns: 56px 1fr; }
+  .plan-item { grid-template-columns: 44px 1fr; }
+  .priority-rank, .plan-step { grid-row: 1 / span 4; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }

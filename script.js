@@ -438,6 +438,8 @@ function renderResult(r) {
   head.appendChild(el("p", "result-brand", t("ui.brand") + " " + t("ui.brandSub")));
   head.appendChild(el("p", "result-for", ui("resultFor")));
   head.appendChild(el("h1", "result-company", r.companyName || "—"));
+  const dateStr = new Date(r.date).toLocaleDateString(state.lang === "en" ? "en-US" : state.lang === "pt" ? "pt-BR" : "es-ES", { year: "numeric", month: "long", day: "numeric" });
+  head.appendChild(el("p", "result-date print-only", ui("printDate") + " " + dateStr));
   root.appendChild(head);
 
   /* ----- Score ring ----- */
@@ -608,12 +610,25 @@ function renderResult(r) {
   main.type = "button";
   main.addEventListener("click", () => openCta(ELEVRA_CONFIG.consultationUrl, "consultation"));
   actions.appendChild(main);
+  const pdf = el("button", "btn btn-ghost", ui("downloadPdf"));
+  pdf.type = "button";
+  pdf.addEventListener("click", downloadPdf);
+  actions.appendChild(pdf);
   const again = el("button", "link-btn", ui("newDiagnostic"));
   again.type = "button";
   again.addEventListener("click", openStartOver);
   actions.appendChild(again);
   fin.appendChild(actions);
   root.appendChild(fin);
+}
+
+/* PDF: uses the browser's native print dialog (desktop, iOS and Android).
+   The user chooses "Save as PDF" as the destination. */
+function downloadPdf() {
+  const prevTitle = document.title;
+  document.title = "Elevra-360-Diagnostic-" + (state.result && state.result.companyName ? state.result.companyName.replace(/[^\w-]+/g, "-") : "result");
+  window.print();
+  setTimeout(() => { document.title = prevTitle; }, 1000);
 }
 
 /* CTA behaviour: open the configured URL, or show a friendly demo notice */
