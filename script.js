@@ -8,10 +8,10 @@
 
 /* ---------- CTA configuration (edit these URLs) ---------- */
 const ELEVRA_CONFIG = {
-  consultationUrl: "",   // "Build my growth plan" / "Talk to a strategist"
-  websiteUrl: "",        // "Explore website solutions"
-  aiReceptionistUrl: "", // "Explore AI Receptionist"
-  consultingUrl: ""      // "Talk to a strategist" (consulting card)
+  consultationUrl: "https://elevradigitall.com/diagnostic/intake",   // "Build my growth plan" / "Talk to a strategist"
+  websiteUrl: "https://elevradigitall.com/websites/",        // "Explore website solutions"
+  aiReceptionistUrl: "https://elevradigitall.com/ai-frontdesk/", // "Explore AI Receptionist"
+  consultingUrl: "https://elevradigitall.com/diagnostic/intake"      // "Talk to a strategist" (consulting card)
 };
 
 /* ---------- Storage keys ---------- */
