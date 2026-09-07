@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="ELEVRA 360° Sales Diagnostic™ — discover the hidden gaps in your digital presence, customer response and sales process.">
+  <title>ELEVRA 360° Sales Diagnostic™</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header">
+    <a class="brand" href="#" data-action="home" aria-label="ELEVRA 360° Sales Diagnostic — home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="brand-name" data-i18n="ui.brand">ELEVRA 360°</span>
+        <span class="brand-sub" data-i18n="ui.brandSub">Sales Diagnostic™</span>
+      </span>
+    </a>
+
+    <nav class="lang-switch" aria-label="Language">
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <button type="button" class="lang-btn" data-lang="pt" aria-pressed="false">PT</button>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </nav>
+  </header>
+
+  <main id="app">
+
+    <!-- ============ Hero ============ -->
+    <section id="view-hero" class="view view-hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="hero-time"><span class="dot" aria-hidden="true"></span><span data-i18n="ui.heroTime">Approximately 5 minutes</span></p>
+        <h1 id="hero-title" class="hero-headline" data-i18n="ui.heroHeadline">How much revenue is your business leaving on the table?</h1>
+        <p class="hero-sub" data-i18n="ui.heroSub">Discover the hidden gaps in your digital presence, customer response and sales process.</p>
+        <p class="hero-text" data-i18n="ui.heroText">Answer a few questions about your business and receive a 360° analysis showing where opportunities may be getting lost — and what to prioritize next.</p>
+
+        <ul class="benefits" id="hero-benefits" aria-label="What you get"></ul>
+
+        <div class="hero-actions">
+          <button type="button" class="btn btn-primary btn-lg" data-action="start" data-i18n="ui.heroCta">Start my diagnostic</button>
+          <button type="button" class="btn btn-ghost" id="btn-resume" data-action="resume" hidden data-i18n="ui.heroResume">Continue where I left off</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Form ============ -->
+    <section id="view-form" class="view view-form" hidden aria-live="polite">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="progress-question" class="progress-question">Question 1 of 27</span>
+          <span id="progress-percent" class="progress-percent">0% complete</span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <form id="question-form" class="question-card" novalidate autocomplete="on">
+        <p class="section-label" id="section-label"></p>
+        <h2 class="question-title" id="question-title"></h2>
+        <p class="question-help" id="question-help" hidden></p>
+        <div class="question-body" id="question-body"></div>
+        <p class="field-error" id="field-error" role="alert" hidden></p>
+      </form>
+
+      <div class="form-nav">
+        <button type="button" class="btn btn-ghost" id="btn-back" data-action="back" data-i18n="ui.back">Back</button>
+        <button type="button" class="btn btn-primary" id="btn-next" data-action="next" data-i18n="ui.continue">Continue</button>
+      </div>
+
+      <div class="form-footer">
+        <button type="button" class="link-btn" data-action="startover" data-i18n="ui.startOver">Start over</button>
+      </div>
+    </section>
+
+    <!-- ============ Loading ============ -->
+    <section id="view-loading" class="view view-loading" hidden aria-live="polite">
+      <div class="loading-inner">
+        <div class="loading-ring" aria-hidden="true"></div>
+        <p class="loading-text" id="loading-text">Analyzing your responses...</p>
+      </div>
+    </section>
+
+    <!-- ============ Result ============ -->
+    <section id="view-result" class="view view-result" hidden>
+      <div class="result-inner" id="result-inner"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span data-i18n="ui.footer">© Elevra Digital. Proprietary diagnostic methodology.</span>
+  </footer>
+
+  <!-- ============ Confirm dialog ============ -->
+  <div class="modal" id="modal-confirm" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <h3 id="modal-title" class="modal-title" data-i18n="ui.startOver">Start over</h3>
+      <p class="modal-text" data-i18n="ui.startOverConfirm">This will erase all your answers and start from the beginning. Continue?</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-action="modal-cancel" data-i18n="ui.back">Back</button>
+        <button type="button" class="btn btn-primary" data-action="modal-confirm" data-i18n="ui.startOver">Start over</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Toast ============ -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="translations.js"></script>
+  <script src="questions.js"></script>
+  <script src="scoring.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
